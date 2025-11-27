@@ -33,13 +33,13 @@ export async function POST(req: NextRequest) {
     console.log("📩 Webhook Event Received:", JSON.stringify(body, null, 2));
 
 
-    if(body?.entry[0]?.changes[0]?.messages){
-      console.log("webhook message----->",body.entry[0].changes[0].messages);
+    // if(body?.entry[0]?.changes){
+      console.log("webhook message----->",body?.entry[0]?.changes);
 
-    }else{
+    // }else{
 
-      console.log("webhook post body----->",body);
-    }
+    //   console.log("webhook post body----->",body);
+    // }
 
 
     // Always return 200 OK, Meta requires it
