@@ -37,6 +37,26 @@ export async function POST(req: NextRequest) {
       console.log("webhook message--333--->",body?.entry[0]?.changes[0]?.value?.messages);
       console.log("webhook message--222--->",body?.entry[0]?.changes[0].value?.contacts);
 
+      const sendedTemplateId=body?.entry[0]?.changes[0]?.value?.messages[0]?.context.id;
+      const buttonName=body?.entry[0]?.changes[0]?.value?.messages[0]?.button?.text;
+
+      const userSendedMessage=body?.entry[0]?.changes[0]?.value?.messages[0]?.text?.body;
+      const fromPhoneNumber=body?.entry[0]?.changes[0]?.value?.messages[0]?.from;
+
+      if(sendedTemplateId&&buttonName){
+        console.log("sendedTemplateId---42-->",sendedTemplateId);
+        console.log("buttonName=====>43--->",buttonName);
+      }
+
+      if(userSendedMessage&&fromPhoneNumber){
+        console.log("userSendedMessage----52--->",userSendedMessage);
+        console.log("fromPhoneNumber---53--->",fromPhoneNumber);
+      }
+  
+      
+      
+
+
 
     // }else{
 
