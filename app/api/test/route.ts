@@ -32,6 +32,16 @@ export async function POST(req: NextRequest) {
     const body = await req.json();
     console.log("📩 Webhook Event Received:", JSON.stringify(body, null, 2));
 
+
+    if(body?.entry[0]?.messages){
+      console.log("webhook message----->",body.entry[0].messages);
+
+    }else{
+
+      console.log("webhook post body----->",body);
+    }
+
+
     // Always return 200 OK, Meta requires it
     return NextResponse.json({ status: "EVENT_RECEIVED" }, { status: 200 });
   } catch (error) {
