@@ -34,7 +34,7 @@ export async function POST(req: NextRequest) {
 
 
     // if(body?.entry[0]?.changes){
-      console.log("webhook message--1111--->",body?.entry[0]?.changes[0]?.value?.messages);
+      console.log("webhook message--333--->",body?.entry[0]?.changes[0]?.value?.messages);
       console.log("webhook message--222--->",body?.entry[0]?.changes[0].value?.contacts);
 
 
